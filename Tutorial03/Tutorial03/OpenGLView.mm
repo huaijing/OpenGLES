@@ -9,7 +9,6 @@
 #import "OpenGLView.h"
 #import "GLESUtils.h"
 
-
 // 使用匿名 category 来声明私有成员
 @interface OpenGLView()
 {
@@ -22,7 +21,15 @@
 - (void)destoryBuffers;
 
 - (void)setupProgram;
+- (void)getSlotsFromProgram;
 - (void)setupProjection;
+
+- (void)updateTextureParameter;
+- (void)setupTextures;
+- (void)destoryTextures;
+
+//- (void)drawSurface;
+//- (void)updateSurface;
 
 - (void)updateTransform;
 - (void)displayLinkCallback:(CADisplayLink*)displayLink;
@@ -96,6 +103,8 @@
 
 - (void)cleanup
 {
+    [self destoryTextures];
+
     [self destoryBuffers];
     
     if (_programHandle != 0) {
@@ -108,6 +117,7 @@
     
     _context = nil;
 }
+
 
 - (void)setupProgram
 {
@@ -127,6 +137,40 @@
     
     glUseProgram(_programHandle);
     
+    [self getSlotsFromProgram];
+
+}
+
+#pragma mark - Texture
+
+- (void)updateTextureParameter
+{
+    // It can be GL_NICEST or GL_FASTEST or GL_DONT_CARE. GL_DONT_CARE by default.
+    //
+    glHint(GL_GENERATE_MIPMAP_HINT, GL_NICEST);
+}
+
+- (void)setupTextures
+{
+    m_texture = [OCTextureLoader loadTexture:@"wooden"
+                                      extend:@"png"];
+    
+    glActiveTexture(GL_TEXTURE0);
+    glBindTexture(GL_TEXTURE_2D, m_texture);
+//    int unitex1 = glGetUniformLocation(_programHandle, "inputImageTexture2");
+    glEnableVertexAttribArray(_textureCoordSlot);
+    glUniform1i(_samplerSlot, 1);
+}
+
+- (void)destoryTextures
+{
+    glDeleteTextures(1, &m_texture);
+}
+
+#pragma mark - Draw object
+
+- (void)getSlotsFromProgram
+{
     // Get the attribute position slot from program
     //
     _positionSlot = glGetAttribLocation(_programHandle, "vPosition");
@@ -138,7 +182,13 @@
     // Get the uniform projection matrix slot from program
     //
     _projectionSlot = glGetUniformLocation(_programHandle, "projection");
+    
+    _textureCoordSlot = glGetAttribLocation(_programHandle, "vTextureCoord");
+    
+    _samplerSlot = glGetUniformLocation(_programHandle, "Sampler");
 }
+
+
 
 -(void)setupProjection
 {
@@ -516,17 +566,15 @@
         0.393000, 0.303667, 0.000000,
         0.446333, 0.482000, 0.000000,
         0.518000, 0.410667, 0.000000,
-        
     };
     
-    glVertexAttribPointer(_positionSlot, 3, GL_FLOAT, GL_FALSE, 0, vertices );
+    glVertexAttribPointer(_positionSlot, 3, GL_FLOAT, GL_FALSE, 0, vertices);
     glEnableVertexAttribArray(_positionSlot);
     
     // Draw triangle
     //
 //    glDrawArrays(GL_TRIANGLES, 0, 3);
     glDrawArrays(GL_TRIANGLES, 0, 336);
-
 }
 
 - (void)drawTriCone
@@ -551,6 +599,54 @@
     //
     glDrawElements(GL_LINES, sizeof(indices)/sizeof(GLubyte), GL_UNSIGNED_BYTE, indices);
 }
+
+//- (void)updateSurface
+//{
+//    ksMatrixLoadIdentity(&_modelViewMatrix);
+//    
+//    ksTranslate(&_modelViewMatrix, 0.0, 0.0, -8);
+//    
+//    ksMatrixMultiply(&_modelViewMatrix, &_rotationMatrix, &_modelViewMatrix);
+//    
+//    // Load the model-view matrix
+//    glUniformMatrix4fv(_modelViewSlot, 1, GL_FALSE, (GLfloat*)&_modelViewMatrix.m[0][0]);
+//    
+//    // Load the normal matrix.
+//    // It's orthogonal, so its Inverse-Transpose is itself!
+//    //
+//    KSMatrix3 normalMatrix3;
+//    ksMatrix4ToMatrix3(&normalMatrix3, &_modelViewMatrix);
+//    glUniformMatrix3fv(_normalMatrixSlot, 1, GL_FALSE, (GLfloat*)&normalMatrix3.m[0][0]);
+//    
+//    // Update textures for stage 0
+//    //
+//    if (_textures != NULL) {
+//        glActiveTexture(GL_TEXTURE0);
+//        glBindTexture(GL_TEXTURE_2D, _textures[_textureIndex]);
+//        [self updateTextureParameter];
+//    }
+//}
+//
+//- (void)drawSurface
+//{
+//    if (_currentVBO == nil)
+//        return;
+//    
+//    int stride = [_currentVBO vertexSize] * sizeof(GLfloat);
+//    const GLvoid* normalOffset = (const GLvoid*)(3 * sizeof(GLfloat));
+//    const GLvoid* texCoordOffset = (const GLvoid*)(6 * sizeof(GLfloat));
+//    
+//    glBindBuffer(GL_ARRAY_BUFFER, [_currentVBO vertexBuffer]);
+//    glVertexAttribPointer(_positionSlot, 3, GL_FLOAT, GL_FALSE, stride, 0);
+//    glVertexAttribPointer(_normalSlot, 3, GL_FLOAT, GL_FALSE, stride, normalOffset);
+//    
+//    glVertexAttribPointer(_textureCoordSlot, 2, GL_FLOAT, GL_FALSE, stride, texCoordOffset);
+//    
+//    // Draw the triangles.
+//    //
+//    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, [_currentVBO triangleIndexBuffer]);
+//    glDrawElements(GL_TRIANGLES, [_currentVBO triangleIndexCount], GL_UNSIGNED_SHORT, 0);
+//}
 
 - (void)render
 {
@@ -578,6 +674,8 @@
         [self setupContext];
         [self setupProgram];
         [self setupProjection];
+        
+        [self setupTextures];
 
         [self resetTransform];
     }
