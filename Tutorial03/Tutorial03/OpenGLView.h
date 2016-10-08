@@ -40,6 +40,8 @@
     unsigned int m_texture;
     GLint _textureCoordSlot;
     GLint _samplerSlot;
+    unsigned int m_uMatrix;
+
 }
 
 @property (nonatomic, assign) float posX;
