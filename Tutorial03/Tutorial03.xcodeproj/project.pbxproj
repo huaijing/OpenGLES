@@ -171,6 +171,11 @@
 			attributes = {
 				LastUpgradeCheck = 0420;
 				ORGANIZATIONNAME = "kesalin@gmail.com";
+				TargetAttributes = {
+					21D50FB416639C56001D4B74 = {
+						DevelopmentTeam = 9826C55V4L;
+					};
+				};
 			};
 			buildConfigurationList = 21D50FAF16639C56001D4B74 /* Build configuration list for PBXProject "Tutorial03" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -289,9 +294,11 @@
 		21D50FD416639C56001D4B74 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				DEVELOPMENT_TEAM = 9826C55V4L;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Tutorial03/Tutorial03-Prefix.pch";
 				INFOPLIST_FILE = "Tutorial03/Tutorial03-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -300,9 +307,11 @@
 		21D50FD516639C56001D4B74 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				DEVELOPMENT_TEAM = 9826C55V4L;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Tutorial03/Tutorial03-Prefix.pch";
 				INFOPLIST_FILE = "Tutorial03/Tutorial03-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
