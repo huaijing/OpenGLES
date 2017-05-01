@@ -159,10 +159,10 @@
 		21E94A5B169060CA00FBDB0B /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				21E94A5C169060D900FBDB0B /* GLESMath.c */,
-				21E94A5D169060D900FBDB0B /* GLESMath.h */,
 				21E94A5E169060D900FBDB0B /* GLESUtils.h */,
 				21E94A5F169060D900FBDB0B /* GLESUtils.m */,
+				21E94A5D169060D900FBDB0B /* GLESMath.h */,
+				21E94A5C169060D900FBDB0B /* GLESMath.c */,
 				21E94A60169060D900FBDB0B /* Quaternion.h */,
 				21E94A61169060D900FBDB0B /* TextureHelper.h */,
 				21E94A62169060D900FBDB0B /* TextureHelper.m */,
@@ -231,6 +231,11 @@
 			attributes = {
 				LastUpgradeCheck = 0420;
 				ORGANIZATIONNAME = "http://blog.csdn.net/kesalin/";
+				TargetAttributes = {
+					21E94A381690608200FBDB0B = {
+						DevelopmentTeam = 9826C55V4L;
+					};
+				};
 			};
 			buildConfigurationList = 21E94A331690608200FBDB0B /* Build configuration list for PBXProject "Tutorial13" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -325,7 +330,7 @@
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -343,7 +348,7 @@
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -353,6 +358,7 @@
 		21E94A581690608300FBDB0B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				DEVELOPMENT_TEAM = 9826C55V4L;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Tutorial13/Tutorial13-Prefix.pch";
 				INFOPLIST_FILE = "Tutorial13/Tutorial13-Info.plist";
@@ -364,6 +370,7 @@
 		21E94A591690608300FBDB0B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				DEVELOPMENT_TEAM = 9826C55V4L;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Tutorial13/Tutorial13-Prefix.pch";
 				INFOPLIST_FILE = "Tutorial13/Tutorial13-Info.plist";

@@ -236,6 +236,11 @@
 			attributes = {
 				LastUpgradeCheck = 0420;
 				ORGANIZATIONNAME = "http://blog.csdn.net/kesalin/";
+				TargetAttributes = {
+					21977FB2168B390A00035EBF = {
+						DevelopmentTeam = 9826C55V4L;
+					};
+				};
 			};
 			buildConfigurationList = 21977FAD168B390A00035EBF /* Build configuration list for PBXProject "Tutorial11" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -331,7 +336,7 @@
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -349,7 +354,7 @@
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -359,6 +364,7 @@
 		21977FD2168B390B00035EBF /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				DEVELOPMENT_TEAM = 9826C55V4L;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Tutorial11/Tutorial11-Prefix.pch";
 				INFOPLIST_FILE = "Tutorial11/Tutorial11-Info.plist";
@@ -370,6 +376,7 @@
 		21977FD3168B390B00035EBF /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				DEVELOPMENT_TEAM = 9826C55V4L;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Tutorial11/Tutorial11-Prefix.pch";
 				INFOPLIST_FILE = "Tutorial11/Tutorial11-Info.plist";

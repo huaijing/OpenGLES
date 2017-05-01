@@ -114,11 +114,11 @@
 				216B4D71167DEA7600E3B53C /* Surface */,
 				216B4D5C167DE9B700E3B53C /* Shader */,
 				216B4D5B167DE9AF00E3B53C /* Utils */,
-				216B4D49167DE93600E3B53C /* AppDelegate.h */,
 				216B4D4F167DE93600E3B53C /* ViewController.h */,
 				216B4D50167DE93600E3B53C /* ViewController.m */,
 				216B4D77167DFC8D00E3B53C /* OpenGLView.h */,
 				216B4D78167DFC8D00E3B53C /* OpenGLView.mm */,
+				216B4D49167DE93600E3B53C /* AppDelegate.h */,
 				216B4D4A167DE93600E3B53C /* AppDelegate.m */,
 				216B4D41167DE93500E3B53C /* Supporting Files */,
 			);
@@ -207,6 +207,11 @@
 			attributes = {
 				LastUpgradeCheck = 0420;
 				ORGANIZATIONNAME = "http://blog.csdn.net/kesalin/";
+				TargetAttributes = {
+					216B4D35167DE93500E3B53C = {
+						DevelopmentTeam = 9826C55V4L;
+					};
+				};
 			};
 			buildConfigurationList = 216B4D30167DE93500E3B53C /* Build configuration list for PBXProject "Tutorial09" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -299,7 +304,7 @@
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -317,7 +322,7 @@
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -327,6 +332,7 @@
 		216B4D55167DE93600E3B53C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				DEVELOPMENT_TEAM = 9826C55V4L;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Tutorial09/Tutorial09-Prefix.pch";
 				INFOPLIST_FILE = "Tutorial09/Tutorial09-Info.plist";
@@ -338,6 +344,7 @@
 		216B4D56167DE93600E3B53C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				DEVELOPMENT_TEAM = 9826C55V4L;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Tutorial09/Tutorial09-Prefix.pch";
 				INFOPLIST_FILE = "Tutorial09/Tutorial09-Info.plist";
