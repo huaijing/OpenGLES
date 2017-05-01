@@ -21,6 +21,7 @@
 		2171BC811661C260007B4825 /* VertexShader.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 2171BC7F1661BB4D007B4825 /* VertexShader.glsl */; };
 		2171BC821661C260007B4825 /* FragmentShader.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 2171BC801661BB65007B4825 /* FragmentShader.glsl */; };
 		21C124F4167D9B7900E80909 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 21C124F3167D9B7900E80909 /* icon.png */; };
+		27A624C61EB6ECEC00F7942A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27A624C51EB6ECEC00F7942A /* ViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,8 @@
 		2171BC7F1661BB4D007B4825 /* VertexShader.glsl */ = {isa = PBXFileReference; lastKnownFileType = text; path = VertexShader.glsl; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.glsl; };
 		2171BC801661BB65007B4825 /* FragmentShader.glsl */ = {isa = PBXFileReference; lastKnownFileType = text; path = FragmentShader.glsl; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.glsl; };
 		21C124F3167D9B7900E80909 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = SOURCE_ROOT; };
+		27A624C41EB6ECEC00F7942A /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		27A624C51EB6ECEC00F7942A /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +99,8 @@
 			children = (
 				2171BC671661B25A007B4825 /* AppDelegate.h */,
 				2171BC681661B25A007B4825 /* AppDelegate.m */,
+				27A624C41EB6ECEC00F7942A /* ViewController.h */,
+				27A624C51EB6ECEC00F7942A /* ViewController.m */,
 				2171BC751661B2FA007B4825 /* OpenGLView.h */,
 				2171BC761661B2FA007B4825 /* OpenGLView.m */,
 				2171BC7C1661B64A007B4825 /* GLESUtils.h */,
@@ -194,6 +199,7 @@
 				2171BC691661B25A007B4825 /* AppDelegate.m in Sources */,
 				2171BC771661B2FA007B4825 /* OpenGLView.m in Sources */,
 				2171BC7E1661B64A007B4825 /* GLESUtils.m in Sources */,
+				27A624C61EB6ECEC00F7942A /* ViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

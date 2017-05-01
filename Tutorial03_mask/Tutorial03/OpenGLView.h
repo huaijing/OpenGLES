@@ -11,6 +11,7 @@
 #include <OpenGLES/ES2/gl.h>
 #include <OpenGLES/ES2/glext.h>
 #include "ksMatrix.h"
+#include "OCTextureLoader.h"
 
 @interface OpenGLView : UIView {
     CAEAGLLayer* _eaglLayer;
@@ -32,6 +33,16 @@
     
     float _rotateX;
     float _scaleZ;
+    
+    // For texture
+    //
+    OCTextureLoader *m_textureLoader;
+    unsigned int m_texture;
+    GLint _textureCoordSlot;
+    GLint _samplerSlot;
+    unsigned int m_uMatrix;
+    GLint _attrpos;
+    GLint _attrtex;
 }
 
 @property (nonatomic, assign) float posX;

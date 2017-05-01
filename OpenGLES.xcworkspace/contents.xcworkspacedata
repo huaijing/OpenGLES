@@ -2,6 +2,15 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:Tutorial03_mask/Tutorial03_mask.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:Tutorial02/Tutorial02.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:Tutorial01/Tutorial01.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:Tutorial15/Tutorial15.xcodeproj">
    </FileRef>
    <FileRef
@@ -36,11 +45,5 @@
    </FileRef>
    <FileRef
       location = "group:Tutorial03/Tutorial03.xcodeproj">
-   </FileRef>
-   <FileRef
-      location = "group:Tutorial02/Tutorial02.xcodeproj">
-   </FileRef>
-   <FileRef
-      location = "group:Tutorial01/Tutorial01.xcodeproj">
    </FileRef>
 </Workspace>

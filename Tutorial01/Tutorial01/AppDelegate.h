@@ -2,8 +2,8 @@
 //  AppDelegate.h
 //  Tutorial01
 //
-//  Created by  on 12-11-24.
-//  Copyright (c) 2012年 __MyCompanyName__. All rights reserved.
+//  Created by jing huai on 2017/5/1.
+//  Copyright © 2017年 jing huai. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
@@ -14,7 +14,8 @@
     OpenGLView* _glView;
 }
 
-@property (strong, nonatomic) IBOutlet UIWindow *window;
+@property (strong, nonatomic) UIWindow *window;
 @property (strong, retain) IBOutlet OpenGLView *glView;
 
 @end
+
